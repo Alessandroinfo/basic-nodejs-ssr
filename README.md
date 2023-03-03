@@ -1,29 +1,57 @@
-# Server-side Rendering Example
+# Server Side Rendering with only Node.js
+**Server-side rendering (SSR)** is the process of rendering HTML on the server before sending it to the client's web browser.
+This approach can help improve page load times and SEO by sending a fully-formed HTML page to the client instead of relying on JavaScript to render the page after it has loaded.
 
-## Files
+## Prerequisites
+**Node.js** installed on your machine.
 
-- `index.html`
-- `server.js`
-- `client.js`
+## Explanations
+`index.html` - HTML file with a div element where the server will render the content.
+`server.js` - Node.js file that will serve the HTML file and any other assets.
+`client.js` - JavaScript file that will run on the client-side.
+In server.js, use the Node.js http module to create a server and listen for requests.
 
-## Steps
+In the server's request listener, use a switch statement to handle requests for different files:
 
-1. HTML file `index.html` with the following content:
+For requests to `'/'`, read the index.html file and replace the placeholder div with the server-rendered content.
+For requests to `'client.js'`, read the client.js file and send it as a response.
+For requests to `'favicon.ico'`, read the favicon.ico file and send it as a response.
+For all other requests, return a 404 error.
 
-   ```html
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <meta charset="UTF-8">
-       <title>Server-side rendering example</title>
-     </head>
-     <body>
-       <div id="app">
-         <!-- This is where the server will render the content -->
-       </div>
-       <script src="client.js"></script>
-     </body>
-   </html>
-      ```
+In `client.js`, create a div element with some content and append it to the div element in `index.html`.
+This will be wlaborated by browser on client side.
 
-Create a JavaScript file called `server.js` that will handle the server-side rendering.
+Start the server by running node `server.js` in the terminal.
+
+Open a web browser and navigate to http://localhost:3000.
+
+
+### Rendering flow
+
+            Client                      Server
+             │                           │
+             │ GET request for /         │
+             │──────────────────────────>│
+             │                           │
+             │                           │
+             │  GET index.html           │
+             │  ─────────────────────────┤
+             │                           │
+             │  Replace placeholder      │
+             │  with server-side content │
+             │  ────────────────────────>│
+             │                           │
+             │  Send rendered HTML       │
+             │  <────────────────────────┤
+             │                           │
+             │ GET request for client.js │
+             │──────────────────────────>│
+             │                           │
+             │  Serve client.js          │
+             │  <────────────────────────┤
+             │                           │
+             │                           │
+             │                           │
+             │ Client modifies DOM       │
+             │ ─────────────────────────>│
+
