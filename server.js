@@ -13,7 +13,8 @@ const server = http.createServer((req, res) => {
                 } else {
                     const content = `
                     <h1>Hello, World!</h1>
-                    <h2>The whole page was rendered on server side! You need to re-run server to see the edits</h2>
+                    <h2>The whole page was rendered on server side!</h2>
+                    <h2>You need to re-run server to see the edits</h2>
                     `;
                     const renderedHtml = html.replace('<!-- This is where the server will render the content -->', content);
                     res.statusCode = 200;
