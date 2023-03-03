@@ -1,0 +1,8 @@
+*
+!*.html
+!*.js
+!*.json
+!*.md
+!*.ico
+!LICENSE
+!.gitignore
