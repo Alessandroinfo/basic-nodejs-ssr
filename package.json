@@ -1,0 +1,22 @@
+{
+  "name": "basic-nodejs-ssr",
+  "version": "1.0.0",
+  "description": "Basic implementation of SSR with Node.js",
+  "main": "server.js",
+  "scripts": {
+    "node": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alessandroinfo/basic-nodejs-ssr.git"
+  },
+  "keywords": [
+    "ssr"
+  ],
+  "author": "Alessandro Russo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alessandroinfo/basic-nodejs-ssr/issues"
+  },
+  "homepage": "https://github.com/Alessandroinfo/basic-nodejs-ssr#readme"
+}
