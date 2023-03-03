@@ -4,9 +4,8 @@
 browser**. 
 
 Before sending to the client it can be elaborated to includes some data.
-It is also possible to run JS code on server side that generate extra HTML (Static Rendering).
-It can be done also with PHP, Java,
-Ruby, Python.
+It is also possible to run JS code on server side that generate extra HTML.
+It can be done also with PHP, Java, Ruby, Python.
 
 This approach can help improve page load times and SEO by sending a fully-formed HTML page to the client instead of
 relying on JavaScript to render the page after it has loaded.
