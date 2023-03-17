@@ -1,4 +1,4 @@
-# Server Side Rendering (SSR) with only Node.js
+# 🌐 Server Side Rendering (SSR) with only Node.js
 
 **Server-side rendering (SSR)** is the process of **rendering HTML on the server before sending it to the client's web
 browser**. 
